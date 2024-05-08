@@ -5,10 +5,11 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #ffba19;
-    --primaryLight: #ffd675;
-    --secondary: #001f3f;
-    --secondaryLight: #001f3f;
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #805b10;
+    --primaryLight: #dda15e;
+    --secondary: #dda15e;
+    --secondaryLight: #ffba43;
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
@@ -20,39 +21,59 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+  }
   .cs-topper {
     font-size: var(--topperFontSize);
-    font-weight: 700;
     line-height: 1.2em;
     text-transform: uppercase;
+    text-align: inherit;
     letter-spacing: 0.1em;
-    color: var(--secondary);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
     display: block;
   }
   .cs-title {
     font-size: var(--headerFontSize);
     font-weight: 900;
     line-height: 1.2em;
-    margin: 0 auto 1rem;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
     color: var(--headerColor);
     position: relative;
   }
   .cs-text {
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
+    text-align: inherit;
     width: 100%;
-    margin: 0 auto;
+    max-width: 40.625rem;
+    margin: 0;
     color: var(--bodyTextColor);
   }
   .cs-button-solid {
     font-size: 1rem;
     font-weight: bold;
-    line-height: 3.125em;
-    text-align: center;
-    text-transform: uppercase;
     text-decoration: none;
+    text-transform: uppercase;
     width: auto;
+    line-height: 3.125em;
+    height: 3.125rem;
+    text-align: center;
     padding: 0 1.875rem;
+    border-radius: 1.5rem 0 1.5rem 0;
+    color: #fff;
+    transition: background-color 0.3s, border-radius 0.3s;
     color: #000;
     background-color: var(--primary);
     display: inline-block;
@@ -78,6 +99,7 @@
     top: 0;
     left: 0;
     z-index: -1;
+    border-radius: 1.5rem 0 1.5rem 0;
     transition: width 0.3s;
   }
 }
@@ -175,10 +197,10 @@
   }
 }
 /* Scale full website with the viewport width */
-@media only screen and (min-width: 2000px) {
+@media only screen and (min-width: 3000px) {
   body,
   html {
-    font-size: 0.85vw;
+    font-size: 0.55vw;
   }
 }
 /*-- -------------------------- -->
@@ -257,7 +279,7 @@
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
     padding: 0.75rem 1rem;
-    background-color: #fff;
+    background-color: #c9a227;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
     z-index: 10000;
@@ -874,115 +896,113 @@
   }
 }
 /*-- -------------------------- -->
-<---    Final Call To Action    -->
+<---            CTA             -->
 <--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  #cta {
-    padding: 3.125rem 0;
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-1693 {
+    padding: var(--sectionPadding);
+    background-color: var(--primary);
     position: relative;
+    overflow: hidden;
   }
-  #cta:before {
-    content: "";
+  #cta-1693 .cs-container {
     width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-1693 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    gap: 1.5rem;
+  }
+  #cta-1693 .cs-title {
+    max-width: 30ch;
+    margin: 0;
+    color: #fff;
+  }
+  #cta-1693 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: #fff;
+    background-color: var(--secondary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #cta-1693 .cs-button-solid:before {
+    content: "";
+    width: 0%;
     height: 100%;
     background: #000;
-    opacity: 0.7;
-    display: block;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+    transition: width 0.3s;
   }
-  #cta .container {
-    text-align: center;
-  }
-  #cta picture {
+  #cta-1693 .cs-button-solid:hover:before {
     width: 100%;
+  }
+  #cta-1693 .cs-wrapper {
+    width: 100%;
+    max-width: 120rem;
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: -2;
-  }
-  #cta picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #cta .title {
-    font-size: min(9vw, 3rem);
-    font-weight: 900;
-    line-height: 1.20833333em;
-    text-align: center;
-    margin-bottom: 2.25rem;
-    color: #fff;
-    position: relative;
-  }
-  #cta p {
-    text-align: center;
-    width: 96%;
-    max-width: 37.375rem;
-    margin: auto;
-    margin-bottom: 2.25rem;
-    color: #fff;
-    opacity: 1;
-  }
-}
-/* Small Desktop */
-@media only screen and (min-width: 64em) {
-  #cta {
-    padding: 10.5rem 0;
-  }
-}
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  #cta {
-    margin-top: 6.25rem;
-    position: relative;
-  }
-  #cta:before {
-    display: none;
-  }
-  #cta:after {
-    content: "";
-    width: 125rem;
-    height: 69.25rem;
-    background: url("/assets/svgs/cta-squares.svg");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: 0;
     left: 50%;
-    z-index: -3;
-    transform: translateX(-50%);
-  }
-  #cta .container {
-    width: 90.0625%;
-    margin: auto;
-  }
-  #cta picture {
-    width: 90.0625%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  #cta picture:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.7;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
     z-index: 1;
+    /* prevents the mouse from interacting with it */
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+  #cta-1693 .cs-graphic {
+    width: 23.25rem;
+    height: 23.25rem;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #cta-1693 .cs-graphic-1 {
+    left: -16.3125rem;
+  }
+  #cta-1693 .cs-graphic-2 {
+    right: -16.3125rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-1693 .cs-content {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #cta-1693 .cs-graphic-1 {
+    left: -7.8125rem;
+  }
+  #cta-1693 .cs-graphic-2 {
+    right: -7.8125rem;
   }
 }
 /* Dark Mode */
