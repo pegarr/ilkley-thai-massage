@@ -186,101 +186,6 @@
   }
 }
 /*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  .services {
-    width: 90%;
-    max-width: 82.5em;
-    margin: auto;
-    margin-top: calc(-167 / 16 * 1em);
-    margin-bottom: 3.125em;
-    padding: 3.125em 1.25em;
-    background: #fff;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-    border-top: 0.375em solid var(--primary);
-    border-radius: 0.3125em;
-    position: relative;
-    z-index: 100;
-  }
-  .services .card {
-    width: 100%;
-    max-width: 22.3125em;
-    margin: auto;
-    margin-bottom: 3.125em;
-    display: block;
-  }
-  .services .card:last-of-type {
-    margin-bottom: 0;
-  }
-  .services .card picture {
-    width: 5.5em;
-    height: 5.5em;
-    margin: auto;
-    margin-bottom: 1.4375em;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .services .card picture img {
-    width: 3em;
-    height: 3em;
-  }
-  .services .card h2 {
-    font-size: 2em;
-    font-weight: 700;
-    line-height: 1.35em;
-    text-align: center;
-    margin-bottom: 0.65em;
-    color: #1a1a1a;
-  }
-  .services .card p {
-    line-height: 1.33333333em;
-    text-align: center;
-    width: 100%;
-    opacity: 0.7;
-  }
-}
-/* Inbetween */
-@media only screen and (min-width: 768px) {
-  .services {
-    font-size: min(1.8vw, 1em);
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .services .card {
-    max-width: 20.3125em;
-    margin: 0;
-  }
-}
-/* Large Desktop */
-@media only screen and (min-width: 1300px) {
-  .services {
-    padding: 3.125em 5em;
-  }
-  .services .card {
-    max-width: 22.3125em;
-  }
-}
-/* Dark mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #services {
-    background: var(--medium);
-  }
-  body.dark-mode #services picture {
-    background: var(--primaryDark);
-  }
-  body.dark-mode #services h2 {
-    font-weight: bold;
-    color: #fff;
-  }
-}
-/*-- -------------------------- -->
 <---            FAQ             -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
@@ -574,38 +479,30 @@
   }
 }
 /*-- -------------------------- -->
-<---          Pricing           -->
+<---          Services          -->
 <--- -------------------------- -*/
+.price1 {
+  color: #babd04;
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #pricing-1842 {
+  #services-1354 {
     padding: var(--sectionPadding);
     position: relative;
-    z-index: 1;
+    z-index: 10;
   }
-  #pricing-1842:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0.03;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  #pricing-1842 .cs-container {
+  #services-1354 .cs-container {
     width: 100%;
     max-width: 80rem;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    /* 48px - 64px */
+    flex-direction: column;
     gap: clamp(3rem, 6vw, 4rem);
-    position: relative;
+    border: #8f5b34;
   }
-  #pricing-1842 .cs-content {
+  #services-1354 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
@@ -613,279 +510,134 @@
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
-    position: relative;
   }
-  #pricing-1842 .cs-topper {
-    color: var(--secondary);
+  #services-1354 .cs-topper {
+    color: #767676;
   }
-  #pricing-1842 .cs-title {
-    max-width: none;
+  #services-1354 .cs-title {
+    max-width: 25ch;
     margin: 0;
   }
-  #pricing-1842 .cs-card-group {
-    width: 100%;
+  #services-1354 .cs-card-group {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-flow: wrap row;
-    justify-content: center;
-    /* 16px - 60px */
-    gap: clamp(1rem, 2vw, 3.75rem);
-    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
   }
-  #pricing-1842 .cs-item {
+  #services-1354 .cs-item {
     text-align: center;
     list-style: none;
     width: 100%;
-    max-width: 25.8125rem;
+    height: 19.0625rem;
     margin: 0;
+    padding: 0;
+    background-color: #000;
+    border-radius: 1.5rem;
+    /* clips background image corners */
+    overflow: hidden;
+    box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    /* 60px - 80px top *
-            /* 32px - 40px left & right */
-    padding: clamp(3.75rem, 8vw, 5rem) clamp(2rem, 4vw, 2.5rem);
-    overflow: hidden;
-    background-color: #fff;
-    border-radius: 30.625rem;
+    grid-column: span 12;
+    grid-row: span 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-end;
     position: relative;
     z-index: 1;
   }
-  #pricing-1842 .cs-item:before {
-    /* Background color */
-    content: '';
+  #services-1354 .cs-item:hover .cs-background:before {
+    background-color: var(--primary);
+    opacity: 0.84;
+  }
+  #services-1354 .cs-item:hover .cs-background img {
+    transform: scale(1.2);
+  }
+  #services-1354 .cs-link {
+    text-decoration: none;
     width: 100%;
     height: 100%;
-    background: var(--primary);
-    opacity: 0.05;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #pricing-1842 .cs-item:after {
-    /* border color */
-    content: '';
-    border: 8px solid var(--primary);
+    /* padding goes on the link, not the cs-item as is normal. We do this because we want the whole card to be hoverable. So we add the padding to the link tag to create the space inside the card. By adding the space inside the cs-link tag we can make the whole card hoverable since the padding is now contributing to the height and widht of the link */
+    padding: 1.5rem;
+    /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    border-radius: 30.625rem;
-    opacity: 0.3;
-    position: absolute;
-    display: block;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    z-index: 10;
-    /* keeps mouse from interacting with it */
-    pointer-events: none;
-  }
-  #pricing-1842 .cs-item.cs-popular {
-    background-color: var(--primary);
-  }
-  #pricing-1842 .cs-item.cs-popular:after {
-    border-color: #fff;
-    opacity: 0.7;
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-ul:before {
-    background-color: #fff;
-    opacity: 0.7;
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-package {
-    background-color: #fff;
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-price,
-  #pricing-1842 .cs-item.cs-popular .cs-li {
-    color: var(--bodyTextColorWhite);
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-li.cs-disabled {
-    filter: brightness(550%);
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-button-solid {
-    background-color: #fff;
-    color: var(--primary);
-  }
-  #pricing-1842 .cs-item.cs-popular .cs-button-solid:hover {
-    background-color: #ffffff;
-  }
-  #pricing-1842 .cs-package {
-    font-size: 1.125rem;
-    font-weight: 700;
-    line-height: 1.2em;
-    text-align: inherit;
-    width: 12.4375rem;
-    /* 16px - 20px bottom */
-    margin: 0 0 clamp(1rem, 2vw, 1.5rem) 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    padding: 1rem 1.5rem;
-    overflow: hidden;
-    color: var(--primary);
-    border-radius: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
-  #pricing-1842 .cs-package:before {
-    /* Background color */
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0.1;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #pricing-1842 .cs-price {
-    /* 31px - 39px */
-    font-size: clamp(1.9375rem, 4vw, 2.4375rem);
-    font-weight: 900;
+  #services-1354 .cs-h3 {
+    font-size: 1.5625rem;
     line-height: 1.2em;
+    font-weight: bold;
     text-align: inherit;
     margin: 0;
-    color: var(--headerColor);
+    color: var(--bodyTextColorWhite);
+    transition: color 0.3s;
   }
-  #pricing-1842 .cs-ul {
-    width: 100%;
-    /* 32px - 40px */
-    margin: clamp(2rem, 4vw, 2.5rem) 0 auto;
-    padding: 1.5rem 0 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    position: relative;
+  #services-1354 .cs-span {
+    /* forces the h3 to alwasy be two lines */
+    display: block;
   }
-  #pricing-1842 .cs-ul:before {
-    content: "";
+  #services-1354 .cs-background {
     width: 100%;
-    height: 1px;
-    background: var(--primary);
-    opacity: 0.3;
+    height: 100%;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
   }
-  #pricing-1842 .cs-li {
-    font-size: 1.375rem;
-    font-weight: 400;
-    font-weight: bold;
-    line-height: 1.5em;
-    list-style: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--bodyTextColor);
-  }
-  #pricing-1842 .cs-li.cs-disabled {
-    opacity: 0.5;
-  }
-  #pricing-1842 .cs-button-solid {
-    font-size: 1rem;
-    font-weight: 700;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-align: center;
-    text-decoration: none;
-    min-width: 9.375rem;
-    margin: 0;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    padding: 0 1.5rem;
-    background-color: var(--primary);
-    color: #fff;
-    border-radius: 0.25rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-  #pricing-1842 .cs-button-solid:before {
+  #services-1354 .cs-background:before {
+    /* background color overlay */
     content: "";
-    width: 0%;
+    position: absolute;
+    display: block;
     height: 100%;
-    background: #000;
-    opacity: 1;
-    border-radius: 0.25rem;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+  #services-1354 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    transition: width 0.3s;
-  }
-  #pricing-1842 .cs-button-solid:hover:before {
+    height: 100%;
     width: 100%;
-  }
-  #pricing-1842 .cs-button-solid {
-    margin-top: 2rem;
-    padding: 0 3rem;
-    border-radius: 3.75rem;
-    overflow: hidden;
+    /* Makes img tag act as a background image */
+    object-fit: cover;
+    transition: transform 0.6s;
   }
 }
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #pricing-1842 .cs-item {
-    width: 48%;
+/* Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+  #services-1354 .cs-item {
+    grid-column: span 6;
   }
 }
-/* Small Desktop - 1024px */
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #pricing-1842 .cs-card-group {
-    flex-wrap: nowrap;
+  #services-1354 .cs-content {
+    text-align: left;
+    align-items: flex-start;
+  }
+  #services-1354 .cs-item {
+    grid-column: span 3;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #pricing-1842 {
-    background-color: rgba(0, 0, 0, 0.2);
+  body.dark-mode #services-1354 .cs-topper {
+    color: var(--primary);
   }
-  body.dark-mode #pricing-1842 .cs-item {
-    background-color: var(--dark);
-    border-color: var(--medium);
-  }
-  body.dark-mode #pricing-1842 .cs-item:before {
-    background-color: #000;
-    opacity: 0.3;
-  }
-  body.dark-mode #pricing-1842 .cs-item:after {
-    opacity: 0.8;
-  }
-  body.dark-mode #pricing-1842 .cs-item.cs-popular {
-    background-color: var(--primary);
-    position: relative;
-    z-index: 1;
-  }
-  body.dark-mode #pricing-1842 .cs-item.cs-popular .cs-package {
-    border: 1px solid #fff;
-    background-color: transparent;
-  }
-  body.dark-mode #pricing-1842 .cs-item.cs-popular .cs-package:before {
-    display: none;
-  }
-  body.dark-mode #pricing-1842 .cs-package {
-    color: var(--headerColor);
-  }
-  body.dark-mode #pricing-1842 .cs-price,
-  body.dark-mode #pricing-1842 .cs-li,
-  body.dark-mode #pricing-1842 .cs-package {
+  body.dark-mode #services-1354 .cs-title {
     color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #pricing-1842 .cs-package:before {
-    opacity: 0.5;
-  }
-  body.dark-mode #pricing-1842 .cs-li {
-    opacity: 0.8;
-  }
-  body.dark-mode #pricing-1842 .cs-li.cs-disabled {
-    opacity: 0.4;
   }
 }
